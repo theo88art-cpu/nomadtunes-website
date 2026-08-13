@@ -5,11 +5,13 @@ import { MapPin, Play } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { IMAGES } from '@/lib/data';
+import { ROADTRIP_STATS } from '@/lib/roadtrip-data';
 import { supabase } from '@/lib/supabase';
 
 export function Hero() {
   const { t } = useLanguage();
   const tr = t.hero;
+  const roadtrip = t.roadtrip;
   const [location, setLocation] = useState<{ city: string; country: string } | null>(null);
 
   useEffect(() => {
@@ -67,9 +69,9 @@ export function Hero() {
 
           <div className="mt-12 flex items-center gap-8">
             {[
-              { n: '8', l: tr.statCountries },
-              { n: '54+', l: tr.statSongs },
-              { n: '2,760 km', l: tr.statTravelled },
+              { n: String(ROADTRIP_STATS.countries), l: roadtrip.statCountries },
+              { n: String(ROADTRIP_STATS.cities), l: roadtrip.statCities },
+              { n: String(ROADTRIP_STATS.songs), l: roadtrip.statSongs },
             ].map((s) => (
               <div key={s.l}>
                 <div className="font-display text-2xl font-bold text-white">
