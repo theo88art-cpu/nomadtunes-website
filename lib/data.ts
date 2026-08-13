@@ -1,7 +1,7 @@
 export const SITE = {
   name: 'Nomadtunes',
   tagline: 'The first nomad recording studio in Europe.',
-  email: 'hello@nomadtunes.eu',
+  email: 'nomadtunesfr@gmail.com',
   socials: {
     instagram: 'https://instagram.com/nomadtunes',
     tiktok: 'https://tiktok.com/@nomadtunes',
