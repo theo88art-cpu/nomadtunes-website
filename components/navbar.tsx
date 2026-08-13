@@ -1,12 +1,11 @@
 'use client';
 
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import { MapPin, Menu, X } from 'lucide-react';
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { SITE } from '@/lib/data';
 import { LanguageSwitcher } from '@/components/language-switcher';
-import { supabase } from '@/lib/supabase';
 
 const LINK_KEYS = ['services', 'roadtrip', 'artists', 'portfolio', 'contest', 'contact'] as const;
 
@@ -14,22 +13,7 @@ export function Navbar() {
   const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [city, setCity] = useState<string | null>(null);
   const { scrollY } = useScroll();
-
-  useEffect(() => {
-    async function loadLocation() {
-      const { data } = await supabase
-        .from('site_location')
-        .select('city')
-        .limit(1)
-        .maybeSingle();
-
-      if (data?.city) setCity(data.city);
-    }
-
-    loadLocation();
-  }, []);
 
   useMotionValueEvent(scrollY, 'change', (v) => {
     setScrolled(v > 40);
@@ -63,12 +47,6 @@ export function Navbar() {
         </div>
 
         <div className="hidden items-center gap-3 lg:flex">
-          {city ? (
-            <span className="flex items-center gap-1 text-sm text-white/60">
-              <MapPin className="h-4 w-4 text-[#ff6a00]" />
-              {city}
-            </span>
-          ) : null}
           <LanguageSwitcher />
           <a
             href="#contest"
@@ -79,12 +57,6 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
-          {city ? (
-            <span className="flex items-center gap-1 text-xs text-white/70">
-              <MapPin className="h-3.5 w-3.5 text-[#ff6a00]" />
-              {city}
-            </span>
-          ) : null}
           <LanguageSwitcher />
           <button
             onClick={() => setOpen((o) => !o)}

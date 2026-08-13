@@ -45,19 +45,6 @@ export function Hero() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="z-10 order-2 lg:order-1"
         >
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-xs font-medium text-white/70"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ff6a00] opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#ff6a00]" />
-            </span>
-            {location ? `${tr.badge.split('·')[0].trim()} · ${location.city}, ${location.country}` : tr.badge}
-          </motion.div>
-
           <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[4.2rem]">
             {tr.title1}{' '}
             <span className="text-gradient-orange">{tr.titleHighlight}</span>{' '}
@@ -138,9 +125,6 @@ export function Hero() {
                   <div>
                     <div className="text-xs font-semibold text-white">
                       {location ? `${location.city}, ${location.country}` : tr.badgeLocation}
-                    </div>
-                    <div className="text-[10px] text-white/40">
-                      {tr.badgeNext}
                     </div>
                   </div>
                 </div>
