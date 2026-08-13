@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type ElementType } from 'react';
 import {
   Mail,
   MapPin,
@@ -236,7 +236,7 @@ function SocialLink({
   label,
 }: {
   href: string;
-  icon: typeof Instagram;
+  icon: ElementType<{ className?: string }>;
   label: string;
 }) {
   return (

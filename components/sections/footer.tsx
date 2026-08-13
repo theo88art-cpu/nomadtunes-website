@@ -1,6 +1,7 @@
 'use client';
 
 import { Instagram, Music2, Youtube, Heart } from 'lucide-react';
+import type { ElementType } from 'react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { SITE } from '@/lib/data';
 import { LocationFooter } from '@/components/sections/location-footer';
@@ -80,7 +81,7 @@ function Social({
   label,
 }: {
   href: string;
-  icon: typeof Instagram;
+  icon: ElementType<{ className?: string }>;
   label: string;
 }) {
   return (
