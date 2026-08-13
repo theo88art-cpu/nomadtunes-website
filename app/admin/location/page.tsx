@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type FormEvent } from 'react';
 import { Button } from '@/components/ui/button';
 import { supabase } from '@/lib/supabase';
 
@@ -56,7 +56,8 @@ export default function AdminLocationPage() {
     };
   }, []);
 
-  const handleUpdateLocation = async () => {
+  const handleUpdateLocation = async (event?: FormEvent<HTMLFormElement>) => {
+    event?.preventDefault();
     if (!adminCode) {
       setMessage('Saisissez le code administrateur.');
       return;
@@ -118,20 +119,35 @@ export default function AdminLocationPage() {
         )}
       </div>
 
-      <label className="mb-4 block text-sm text-white/80">
-        Code administrateur
+      <form onSubmit={handleUpdateLocation}>
         <input
-          type="password"
-          value={adminCode}
-          onChange={(event) => setAdminCode(event.target.value)}
-          className="mt-2 block w-full rounded-lg border border-white/20 bg-black/20 px-3 py-2 text-white"
-          autoComplete="current-password"
+          type="text"
+          name="username"
+          value="Nomadtunes Admin"
+          autoComplete="username"
+          readOnly
+          tabIndex={-1}
+          aria-hidden="true"
+          className="sr-only"
         />
-      </label>
 
-      <Button onClick={handleUpdateLocation} disabled={updating}>
-        📍 Utiliser ma position actuelle
-      </Button>
+        <label className="mb-4 block text-sm text-white/80">
+          Code administrateur
+          <input
+            type="password"
+            name="password"
+            value={adminCode}
+            onChange={(event) => setAdminCode(event.target.value)}
+            className="mt-2 block w-full rounded-lg border border-white/20 bg-black/20 px-3 py-2 text-white"
+            autoComplete="current-password"
+            enterKeyHint="go"
+          />
+        </label>
+
+        <Button type="submit" disabled={updating}>
+          📍 Utiliser ma position actuelle
+        </Button>
+      </form>
 
       {message ? <p className="mt-4 text-sm text-white/60">{message}</p> : null}
     </div>
