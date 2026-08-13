@@ -1,0 +1,210 @@
+const en = {
+  nav: {
+    studio: 'Studio',
+    services: 'Services',
+    roadtrip: 'Roadtrip',
+    artists: 'Artists',
+    portfolio: 'Portfolio',
+    contest: 'Contest',
+    contact: 'Contact',
+    faq: 'FAQ',
+    winMix: 'Win a Mix',
+  },
+  hero: {
+    badge: 'Now on the road · Estonia',
+    title1: 'The first',
+    titleHighlight: 'nomad recording studio',
+    title2: 'in Europe.',
+    subtitle:
+      'A professional recording studio travelling all across Europe — built inside a camper van.',
+    btnDiscover: 'Discover the Studio',
+    btnRoadtrip: 'Follow the Roadtrip',
+    statCountries: 'Countries',
+    statSongs: 'Songs recorded',
+    statTravelled: 'Travelled',
+    badgeLocation: 'Tallinn, EE',
+    badgeNext: 'Next: Stockholm',
+    altVan: 'Nomadtunes camper van recording studio in the mountains',
+  },
+  discover: {
+    label: 'Discover Nomadtunes',
+    title: 'Two stories. One van. Endless road.',
+    reel1Title: 'Why I left everything to produce in a van',
+    reel1Tag: 'Founder Story',
+    reel2Title: 'How to record in a van',
+    reel2Tag: 'Behind the Scenes',
+    watchReel: 'Watch the reel',
+  },
+  services: {
+    label: 'Services',
+    title: 'Everything an artist needs.',
+    recordingTitle: 'Recording',
+    recordingDesc:
+      "With the Audio-Technica AT4033 microphone, and soon other professional microphones, capture every nuance of your voice with studio quality, wherever you are.",
+    mixingTitle: 'Mixing',
+    mixingDesc:
+      'Mixing done with Universal Audio, Waves, FabFilter and Antares plugins, on a Focal monitoring system calibrated in the van for a precise, powerful result ready for all streaming platforms.',
+    masteringTitle: 'Mastering',
+    masteringDesc:
+      'Mastering optimised for Spotify, Apple Music, YouTube Music, Deezer, Tidal and all streaming platforms to guarantee a professional sound on every listening system.',
+    productionTitle: 'Music Production',
+    productionDesc:
+      'Original compositions, arrangements and custom instrumentals tailored to your artistic universe, straight from the Nomadtunes studio. All Nomadtunes instrumentals are also available on Spotify.',
+    productionLinkText: 'Click here to discover them.',
+    productionLinkUrl:
+      'https://open.spotify.com/intl-fr/artist/6uNGJkMutXFMKC71HObCgs',
+  },
+  roadtrip: {
+    label: 'Roadtrip Europe',
+    title1: 'Europe,',
+    titleHighlight: 'city by city.',
+    description:
+      'Click a city to discover the artists we met and the songs we recorded there.',
+    legendVisited: 'Artist met',
+    statCountries: 'Countries visited',
+    statCities: 'Cities',
+    statArtists: 'Artists met',
+    statSongs: 'Songs recorded',
+    modalSongs: 'Songs recorded',
+    btnSpotify: 'Listen on Spotify',
+    artist: 'Artist',
+  },
+  artists: {
+    label: 'Artists at Nomadtunes',
+    title: 'The voices of the label.',
+    prev: 'Previous',
+    next: 'Next',
+  },
+  portfolio: {
+    label: 'Portfolio',
+    title: 'Moments from the road.',
+    typeMusicVideo: 'Music Video',
+    typeFreestyle: 'Freestyle',
+    typeStudioSession: 'Studio Session',
+    typePhoto: 'Photo',
+    items: [
+      'Roadside Freestyle — Berlin',
+      'Vocal Take — Lyon',
+      'Van Sessions — Amsterdam',
+      'Golden Hour — Tallinn',
+      'Mountain Echo — Vilnius',
+      'Mixdown — Warsaw',
+      'The Van — Riga',
+      'Night Drive — Brussels',
+    ],
+  },
+  contest: {
+    title1: 'Win a Professional',
+    titleHighlight: 'Mix & Master',
+    description:
+      'Upload your song and enter your details. One winner is drawn every month.',
+    uploadLabel: 'Upload your song',
+    uploadPlaceholder: 'Click to upload (.ZIP, .RAR, .7Z)',
+    phInstagram: '@yourhandle',
+    phEmail: 'your@email.com',
+    phPhone: 'Your phone number',
+    phCountry: 'Your country',
+    terms:
+      'I accept the contest terms and agree to be contacted by Nomadtunes. My entry may be used for promotional purposes.',
+    errorTerms: 'Please accept the terms and fill in all fields, including your phone number.',
+    submitting: 'Entering...',
+    submit: 'Enter the Contest',
+    successTitle: "You're in!",
+    successDesc:
+      "Good luck — we'll email the winner at the end of the month.",
+  },
+  newsletter: {
+    title1: 'Follow the',
+    titleHighlight: 'journey',
+    title2: '.',
+    description:
+      'Get notified when the van arrives in a new country. New sessions, new artists, new music — straight to your inbox.',
+    placeholder: 'your@email.com',
+    subscribe: 'Subscribe',
+    success: 'Merci pour votre inscription à la newsletter Nomadtunes !',
+    error: 'Something went wrong. Please try again.',
+  },
+  testimonials: {
+    label: 'Testimonials',
+    title: 'Loved by artists across Europe.',
+    items: [
+      "Recording inside the van felt like a dream. The sound is pristine and the vibe is unmatched. I'll never forget that session.",
+      'They pulled up to my city, set up in an hour, and delivered a mix that sounds better than any studio I\'ve booked in Brussels.',
+      'The whole concept is genius. A world-class studio that comes to you. My master was streaming-ready in 48 hours.',
+      'I recorded my EP looking at the Baltic Sea from the van window. That feeling is in every single take.',
+    ],
+    roles: [
+      'Soul Artist · France',
+      'Hip-Hop Artist · Belgium',
+      'Producer · Germany',
+      'Folk Singer · Estonia',
+    ],
+  },
+  faq: {
+    label: 'FAQ',
+    title: 'Questions from the road.',
+    items: [
+      {
+        q: 'How does recording inside a camper van actually work?',
+        a: 'The van is acoustically treated and carries a full vocal booth, a calibrated monitoring system, and a professional signal chain. We can set up a session anywhere we park — cities, countryside, or roadside — in under an hour.',
+      },
+      {
+        q: 'Which countries does Nomadtunes travel to?',
+        a: 'We follow a rolling route across Europe. So far we have visited France, Belgium, the Netherlands, Germany, Poland, Lithuania, Latvia and Estonia. New countries are added as the roadtrip continues — follow the map to see where we go next.',
+      },
+      {
+        q: 'Can I book the studio to come to my city?',
+        a: 'Yes. If your city is on or near our planned route, reach out through the contact form with your dates and project. We will do our best to schedule a stop with you.',
+      },
+      {
+        q: 'What services do you offer?',
+        a: 'Recording, mixing, mastering, full music production, and video creation — music videos, freestyle sessions, and studio content. You can book one service or the full package.',
+      },
+      {
+        q: 'How long does a typical session take?',
+        a: 'A single vocal recording session runs 2–4 hours. Mixing and mastering are delivered within 48–72 hours after the session, depending on the project.',
+      },
+      {
+        q: 'Is the Win a Mix & Master contest free to enter?',
+        a: 'Yes, completely free. Upload one song, enter your details, and accept the terms. One winner is drawn each month and receives a professional mix and master of their track.',
+      },
+    ],
+  },
+  contact: {
+    label: 'Contact',
+    title: 'Want the van in your city?',
+    description:
+      'Tell us about your project and your location. We\'ll get back to you.',
+    phName: 'Your name',
+    phEmail: 'Your email',
+    phMessage: 'Tell us about your project...',
+    error: 'Something went wrong. Please try again.',
+    send: 'Send Message',
+    sending: 'Sending...',
+    successTitle: 'Message sent!',
+    successDesc: 'We\'ll reply within 48 hours.',
+    emailLabel: 'Email',
+    currentlyIn: 'Currently in',
+    currentlyValue: 'Tallinn, Estonia',
+    followJourney: 'Follow the journey',
+    mapTitle: 'Nomadtunes location',
+  },
+  footer: {
+    description:
+      "Europe's first nomad recording studio. A professional studio travelling across the continent inside a camper van.",
+    explore: 'Explore',
+    getInTouch: 'Get in touch',
+    currentlyLabel: 'Currently:',
+    nextStop: 'Next stop: Stockholm, Sweden',
+    rights: 'All rights reserved.',
+    builtWith: 'Built with',
+    builtWithSuffix: 'on the road',
+  },
+  language: {
+    switcherLabel: 'Switch language',
+    fr: 'Français',
+    en: 'English',
+  },
+};
+
+export default en;
