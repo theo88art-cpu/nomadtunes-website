@@ -44,7 +44,7 @@ export function Testimonials() {
                 </div>
 
                 <p className="mt-4 text-base leading-relaxed text-white/70">
-                  &ldquo;{tr.items[i]}&rdquo;
+                  &ldquo;{tm.quote}&rdquo;
                 </p>
 
                 <div className="mt-6 flex items-center gap-3">
@@ -56,7 +56,7 @@ export function Testimonials() {
                   />
                   <div>
                     <div className="font-semibold text-white">{tm.name}</div>
-                    <div className="text-xs text-white/40">{tr.roles[i]}</div>
+                    <div className="text-xs text-white/40">{tm.role}</div>
                   </div>
                 </div>
               </motion.div>

@@ -153,23 +153,31 @@ export const PORTFOLIO = [
 
 export const TESTIMONIALS = [
   {
-    name: 'Léa Moreau',
-    image:
-      'https://images.pexels.com/photos/15777800/pexels-photo-15777800.jpeg?auto=compress&cs=tinysrgb&w=400',
+    name: 'JNA',
+    role: 'Chanteuse RnB · France',
+    quote:
+      "Je fais tous mes clips et mes enregistrements depuis des années. Très professionnel, top du top.",
+    image: '/images/testimonial-jna.png',
   },
   {
-    name: 'Daan Janssens',
-    image:
-      'https://images.pexels.com/photos/6102841/pexels-photo-6102841.jpeg?auto=compress&cs=tinysrgb&w=400',
+    name: 'Manet C',
+    role: 'Chanteur latino · France',
+    quote:
+      "Une très bonne équipe, avec beaucoup d'idées et surtout de l'expérience dans tous les domaines : rap, trap, funk, latino, flamenco, rumba… Un régal de bosser avec l'équipe.",
+    image: '/images/testimonial-manet-c.png',
   },
   {
-    name: 'Mira Köhler',
-    image:
-      'https://images.pexels.com/photos/35490803/pexels-photo-35490803.jpeg?auto=compress&cs=tinysrgb&w=400',
+    name: 'Aurélien Carrodano',
+    role: 'Compositeur · France',
+    quote:
+      "Efficace et pas cher. Idéal pour poser vos inspis et avoir un rendu de qualité. En plus, L'ingé fait de bonnes prods. Tentez l'expérience !",
+    image: '/images/testimonial-aurelien-carrodano.png',
   },
   {
-    name: 'Liisa Tamm',
-    image:
-      'https://images.pexels.com/photos/16869444/pexels-photo-16869444.jpeg?auto=compress&cs=tinysrgb&w=400',
+    name: 'Tchoune Tchanelas',
+    role: 'Chanteur flamenco · France',
+    quote:
+      "J'ai enregistré plusieurs musiques et aussi des vidéos : super propre, rapide, professionnel, et en plus ce n'est pas cher !",
+    image: '/images/testimonial-tchoune-tchanelas.png',
   },
 ];
