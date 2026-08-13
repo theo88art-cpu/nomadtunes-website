@@ -29,6 +29,7 @@ export default function AdminLocationPage() {
   const [loading, setLoading] = useState(true);
   const [updating, setUpdating] = useState(false);
   const [message, setMessage] = useState('');
+  const [adminCode, setAdminCode] = useState('');
 
   useEffect(() => {
     let mounted = true;
@@ -56,6 +57,11 @@ export default function AdminLocationPage() {
   }, []);
 
   const handleUpdateLocation = async () => {
+    if (!adminCode) {
+      setMessage('Saisissez le code administrateur.');
+      return;
+    }
+
     if (!navigator.geolocation) {
       setMessage('La géolocalisation n’est pas disponible dans ce navigateur.');
       return;
@@ -77,7 +83,7 @@ export default function AdminLocationPage() {
         body: JSON.stringify({
           latitude: position.coords.latitude,
           longitude: position.coords.longitude,
-          secret: process.env.NEXT_PUBLIC_ADMIN_LOCATION_SECRET,
+          secret: adminCode,
         }),
       });
 
@@ -111,6 +117,17 @@ export default function AdminLocationPage() {
           <p>Aucune localisation configurée.</p>
         )}
       </div>
+
+      <label className="mb-4 block text-sm text-white/80">
+        Code administrateur
+        <input
+          type="password"
+          value={adminCode}
+          onChange={(event) => setAdminCode(event.target.value)}
+          className="mt-2 block w-full rounded-lg border border-white/20 bg-black/20 px-3 py-2 text-white"
+          autoComplete="current-password"
+        />
+      </label>
 
       <Button onClick={handleUpdateLocation} disabled={updating}>
         📍 Utiliser ma position actuelle
