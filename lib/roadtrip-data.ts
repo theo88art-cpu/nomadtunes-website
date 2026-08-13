@@ -86,9 +86,10 @@ export const MAP_CITIES: MapCity[] = [
 export const ROADTRIP_STATS = {
   countries: new Set(ROADTRIP_DATA.map((c) => c.country)).size,
   cities: ROADTRIP_DATA.length,
-  artists: ROADTRIP_DATA.reduce((sum, c) => sum + c.artists.length, 0),
   songs: ROADTRIP_DATA.reduce(
-    (sum, c) => sum + c.artists.reduce((s, a) => s + a.songs.length, 0),
+    // A Spotify release represents one recorded piece, even when the optional
+    // local songs list has not been filled in yet.
+    (sum, c) => sum + c.artists.filter((artist) => Boolean(artist.spotify)).length,
     0,
   ),
 };

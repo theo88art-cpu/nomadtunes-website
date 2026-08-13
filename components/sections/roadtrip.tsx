@@ -26,7 +26,6 @@ export function Roadtrip() {
     () => [
       { n: String(ROADTRIP_STATS.countries), l: tr.statCountries },
       { n: String(ROADTRIP_STATS.cities), l: tr.statCities },
-      { n: String(ROADTRIP_STATS.artists), l: tr.statArtists },
       { n: String(ROADTRIP_STATS.songs), l: tr.statSongs },
     ],
     [tr],
@@ -67,7 +66,7 @@ export function Roadtrip() {
         </Reveal>
 
         {/* Auto-calculated stats */}
-        <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
           {stats.map((s, i) => (
             <Reveal key={s.l} delay={i * 0.08}>
               <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5 text-center">
