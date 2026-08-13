@@ -493,6 +493,25 @@ export const ROADTRIP_DATA: RoadtripCity[] = [
     ],
   },
   {
+    city: 'Tallinn',
+    country: 'Estonie',
+    latitude: 59.437,
+    longitude: 24.7536,
+    artists: [
+      {
+        name: 'Pistique',
+        spotify: 'https://open.spotify.com/intl-fr/track/4RfY6mb29kDgQnVAbgN6Xh?si=e0c3ea86ab49485e',
+        spotifyCover: '',
+        spotifyEmbed:
+          'https://open.spotify.com/embed/track/4RfY6mb29kDgQnVAbgN6Xh?utm_source=generator&theme=0',
+        instagram: '',
+        youtube: '',
+        songs: [],
+        description: '',
+      },
+    ],
+  },
+  {
     city: 'Bouc-Bel-Air',
     country: 'France',
     latitude: 43.4231,
@@ -589,6 +608,7 @@ export const MAP_CITIES: MapCity[] = [
   { city: 'Rødding', country: 'Danemark', latitude: 55.2413, longitude: 9.0573 },
   { city: 'Randers', country: 'Danemark', latitude: 56.4614, longitude: 10.0579 },
   // Estonie
+  { city: 'Tallinn', country: 'Estonie', latitude: 59.437, longitude: 24.7536 },
   { city: 'Tartu', country: 'Estonie', latitude: 58.378, longitude: 26.729 },
   // Espagne
   { city: 'Sabadell', country: 'Espagne', latitude: 41.5433, longitude: 2.1085 },
