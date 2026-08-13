@@ -118,7 +118,7 @@ export function Hero() {
                   ease: 'easeInOut',
                   delay: 1,
                 }}
-                className="absolute -left-3 bottom-10 glass rounded-2xl p-3 sm:-left-6"
+                className="absolute -top-5 left-1/2 z-10 -translate-x-1/2 glass rounded-2xl p-3"
               >
                 <div className="flex items-center gap-2">
                   <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#ff6a00]/20">
