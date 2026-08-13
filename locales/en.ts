@@ -146,19 +146,19 @@ const en = {
     items: [
       {
         q: 'How does recording inside a camper van actually work?',
-        a: 'The van is acoustically treated and carries a full vocal booth, a calibrated monitoring system, and a professional signal chain. We can set up a session anywhere we park — cities, countryside, or roadside — in under an hour.',
+        a: 'I record directly inside the van with a professional signal chain and monitoring system. I can set up a session wherever I park — in a city, the countryside, or on the road — depending on the location.',
       },
       {
         q: 'Which countries does Nomadtunes travel to?',
-        a: 'We follow a rolling route across Europe. So far we have visited France, Belgium, the Netherlands, Germany, Poland, Lithuania, Latvia and Estonia. New countries are added as the roadtrip continues — follow the map to see where we go next.',
+        a: 'I follow a rolling route across Europe. New countries are added as the roadtrip continues — follow the map to see where I am now.',
       },
       {
         q: 'Can I book the studio to come to my city?',
-        a: 'Yes. If your city is on or near our planned route, reach out through the contact form with your dates and project. We will do our best to schedule a stop with you.',
+        a: 'Yes. If your city is on or near my planned route, reach out through the contact form with your dates and project. I will do my best to schedule a stop with you.',
       },
       {
         q: 'What services do you offer?',
-        a: 'Recording, mixing, mastering, full music production, and video creation — music videos, freestyle sessions, and studio content. You can book one service or the full package.',
+        a: 'I offer recording, mixing, mastering, full music production, and video creation — music videos, freestyle sessions, and studio content. You can book one service or the full package.',
       },
       {
         q: 'How long does a typical session take?',

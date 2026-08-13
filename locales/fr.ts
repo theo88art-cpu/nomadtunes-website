@@ -146,19 +146,19 @@ const fr = {
     items: [
       {
         q: "Comment fonctionne l'enregistrement dans un camping-car ?",
-        a: "Le van est traité acoustiquement et embarque une cabine vocale complète, un système de monitoring calibré et une chaîne de signal professionnelle. Nous pouvons installer une session partout où nous nous garons — villes, campagne ou au bord de la route — en moins d'une heure.",
+        a: "J'enregistre directement dans le van avec une chaîne de signal professionnelle et un système de monitoring. Je peux installer une session là où je me gare — en ville, à la campagne ou sur la route — selon les conditions du lieu.",
       },
       {
         q: 'Dans quels pays Nomadtunes voyage-t-il ?',
-        a: "Nous suivons un itinéraire progressif à travers l'Europe. Jusqu'à présent, nous avons visité la France, la Belgique, les Pays-Bas, l'Allemagne, la Pologne, la Lituanie, la Lettonie et l'Estonie. De nouveaux pays sont ajoutés au fur et à mesure — suivez la carte pour voir notre prochaine destination.",
+        a: "Je suis un itinéraire progressif à travers l'Europe. De nouveaux pays s'ajoutent au fil du roadtrip : suivez la carte pour voir où je me trouve actuellement.",
       },
       {
         q: 'Puis-je réserver le studio pour ma ville ?',
-        a: "Oui. Si votre ville est sur ou près de notre itinéraire prévu, contactez-nous via le formulaire avec vos dates et votre projet. Nous ferons de notre mieux pour planifier un arrêt chez vous.",
+        a: "Oui. Si votre ville est sur ou près de mon itinéraire prévu, contactez-moi via le formulaire avec vos dates et votre projet. Je ferai de mon mieux pour planifier un arrêt chez vous.",
       },
       {
         q: 'Quels services proposez-vous ?',
-        a: "Enregistrement, mixage, mastering, production musicale complète et création vidéo — clips musicaux, freestyles et contenu studio. Vous pouvez réserver un service ou le pack complet.",
+        a: "Je propose l'enregistrement, le mixage, le mastering, la production musicale complète et la création vidéo : clips musicaux, freestyles et contenu studio. Vous pouvez réserver un service ou le pack complet.",
       },
       {
         q: 'Combien de temps dure une session type ?',
