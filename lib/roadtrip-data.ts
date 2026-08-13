@@ -38,6 +38,25 @@ export const ROADTRIP_DATA: RoadtripCity[] = [
       },
     ],
   },
+  {
+    city: 'Haderslev',
+    country: 'Danemark',
+    latitude: 55.2538,
+    longitude: 9.4879,
+    artists: [
+      {
+        name: 'Abbendo',
+        spotify: 'https://open.spotify.com/intl-fr/track/6msHDy2TGH04RYkrl5DLpr?si=09d1478b78f74aab',
+        spotifyCover: '',
+        spotifyEmbed:
+          'https://open.spotify.com/embed/track/6msHDy2TGH04RYkrl5DLpr?utm_source=generator&theme=0',
+        instagram: '',
+        youtube: '',
+        songs: [],
+        description: '',
+      },
+    ],
+  },
 ];
 
 export type MapCity = {

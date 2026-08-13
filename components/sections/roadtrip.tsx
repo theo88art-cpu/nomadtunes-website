@@ -280,7 +280,7 @@ function ArtistPopup({
                 {artist.name}
               </h3>
               <p className="text-xs text-white/60">
-                {city}, {country} 🇫🇷
+                {city}, {country}
               </p>
             </div>
 
