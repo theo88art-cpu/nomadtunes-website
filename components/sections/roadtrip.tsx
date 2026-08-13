@@ -222,7 +222,7 @@ function SpotifyEmbed({ src }: { src: string }) {
 style="border-radius:12px"
 src="${src}"
 width="100%"
-height="352"
+height="152"
 frameborder="0"
 allowfullscreen=""
 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
@@ -260,15 +260,15 @@ function ArtistPopup({
 
   return (
     <div
-      className="fixed inset-0 z-[2000] flex items-center justify-center p-4"
+      className="absolute inset-0 z-[1000] flex items-end justify-center p-3 sm:fixed sm:z-[2000] sm:items-center sm:p-4"
       onClick={onClose}
     >
       <div
-        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/25 sm:bg-black/70 sm:backdrop-blur-sm"
         aria-hidden="true"
       />
       <div
-        className="relative z-10 w-full max-w-[340px] animate-in fade-in zoom-in-95 duration-300"
+        className="relative z-10 w-full max-w-[340px] animate-in fade-in slide-in-from-bottom-3 duration-300 sm:zoom-in-95 sm:slide-in-from-bottom-0"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="glass glass-orange rounded-2xl overflow-hidden shadow-2xl glow-orange-sm">
