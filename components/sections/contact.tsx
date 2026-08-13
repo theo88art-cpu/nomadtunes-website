@@ -7,11 +7,11 @@ import {
   MapPin,
   Instagram,
   Music,
+  Music2,
   Youtube,
   Send,
   Check,
   Loader2,
-  MessageSquare,
 } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { SITE } from '@/lib/data';
@@ -210,7 +210,7 @@ export function Contact() {
                   <SocialLink href={SITE.socials.instagram} icon={Instagram} label="Instagram" />
                   <SocialLink href={SITE.socials.spotify} icon={Music} label="Spotify" />
                   <SocialLink href={SITE.socials.youtube} icon={Youtube} label="YouTube" />
-                  <SocialLink href={SITE.socials.tiktok} icon={MessageSquare} label="TikTok" />
+                  <SocialLink href={SITE.socials.tiktok} icon={Music2} label="TikTok" />
                 </div>
               </div>
 

@@ -3,10 +3,10 @@ export const SITE = {
   tagline: 'The first nomad recording studio in Europe.',
   email: 'nomadtunesfr@gmail.com',
   socials: {
-    instagram: 'https://instagram.com/nomadtunes',
-    tiktok: 'https://tiktok.com/@nomadtunes',
-    spotify: 'https://spotify.com/nomadtunes',
-    youtube: 'https://youtube.com/@nomadtunes',
+    instagram: 'https://www.instagram.com/nomadtunes/',
+    tiktok: 'https://www.tiktok.com/@nomadtunesfr',
+    spotify: 'https://open.spotify.com/intl-fr/artist/1q3YaUKqu47bZVpIFQKF21?si=g9NpPxskSduw3ragnN8uDA',
+    youtube: 'https://www.youtube.com/@nomadtunes9580',
   },
 };
 

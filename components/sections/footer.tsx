@@ -1,6 +1,6 @@
 'use client';
 
-import { Instagram, Music, Youtube, MessageSquare, Heart } from 'lucide-react';
+import { Instagram, Music, Music2, Youtube, Heart } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { SITE } from '@/lib/data';
 import { LocationFooter } from '@/components/sections/location-footer';
@@ -27,7 +27,7 @@ export function Footer() {
               <Social href={SITE.socials.instagram} icon={Instagram} label="Instagram" />
               <Social href={SITE.socials.spotify} icon={Music} label="Spotify" />
               <Social href={SITE.socials.youtube} icon={Youtube} label="YouTube" />
-              <Social href={SITE.socials.tiktok} icon={MessageSquare} label="TikTok" />
+              <Social href={SITE.socials.tiktok} icon={Music2} label="TikTok" />
             </div>
           </div>
 
