@@ -149,12 +149,12 @@ const en = {
         a: 'I record directly inside the van with a professional signal chain and monitoring system. I can set up a session wherever I park — in a city, the countryside, or on the road — depending on the location.',
       },
       {
-        q: 'Which countries does Nomadtunes travel to?',
-        a: 'I follow a rolling route across Europe. New countries are added as the roadtrip continues — follow the map to see where I am now.',
+        q: 'Which countries do I travel to?',
+        a: 'I follow a rolling route across Europe. I have already travelled through France, Belgium, the Netherlands, Germany, the Czech Republic, Poland, Denmark, Lithuania, Latvia and Estonia. New countries are added as the roadtrip continues — follow the map to see where I am now.',
       },
       {
-        q: 'Can I book the studio to come to my city?',
-        a: 'Yes. If your city is on or near my planned route, reach out through the contact form with your dates and project. I will do my best to schedule a stop with you.',
+        q: 'Can I book the studio in my city?',
+        a: 'Yes. If your city is on or near my planned route, contact me through the form with your dates and project. I will do my best to schedule a stop near you.',
       },
       {
         q: 'What services do you offer?',

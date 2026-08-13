@@ -149,16 +149,16 @@ const fr = {
         a: "J'enregistre directement dans le van avec une chaîne de signal professionnelle et un système de monitoring. Je peux installer une session là où je me gare — en ville, à la campagne ou sur la route — selon les conditions du lieu.",
       },
       {
-        q: 'Dans quels pays Nomadtunes voyage-t-il ?',
-        a: "Je suis un itinéraire progressif à travers l'Europe. De nouveaux pays s'ajoutent au fil du roadtrip : suivez la carte pour voir où je me trouve actuellement.",
+        q: 'Dans quels pays je voyage ?',
+        a: "Je suis un itinéraire progressif à travers l'Europe. J'ai déjà traversé la France, la Belgique, les Pays-Bas, l'Allemagne, la République tchèque, la Pologne, le Danemark, la Lituanie, la Lettonie et l'Estonie. De nouveaux pays s'ajoutent au fil du roadtrip : suivez la carte pour voir où je me trouve actuellement.",
       },
       {
-        q: 'Puis-je réserver le studio pour ma ville ?',
-        a: "Oui. Si votre ville est sur ou près de mon itinéraire prévu, contactez-moi via le formulaire avec vos dates et votre projet. Je ferai de mon mieux pour planifier un arrêt chez vous.",
+        q: 'Puis-je réserver le studio dans ma ville ?',
+        a: "Oui. Si ta ville est sur ou près de mon itinéraire prévu, contacte-moi via le formulaire avec tes dates et ton projet. Je ferai de mon mieux pour planifier un arrêt près de chez toi.",
       },
       {
         q: 'Quels services proposez-vous ?',
-        a: "Je propose l'enregistrement, le mixage, le mastering, la production musicale complète et la création vidéo : clips musicaux, freestyles et contenu studio. Vous pouvez réserver un service ou le pack complet.",
+        a: "Je propose l'enregistrement, le mixage, le mastering, la production musicale complète et la création vidéo : clips musicaux, freestyles et contenu studio. Tu peux réserver un service, un pack complet ou tenter de gagner le concours Mix & Master.",
       },
       {
         q: 'Combien de temps dure une session type ?',
@@ -166,7 +166,7 @@ const fr = {
       },
       {
         q: 'Le concours Gagne un Mix & Master est-il gratuit ?',
-        a: 'Oui, entièrement gratuit. Téléchargez un morceau, entrez vos informations et acceptez les conditions. Un gagnant est tiré chaque mois et reçoit un mix et un master professionnels de son morceau.',
+        a: 'Oui, entièrement gratuit. Télécharge un morceau, entre tes informations et accepte les conditions. Un gagnant est tiré chaque mois et reçoit un mix et un master professionnels de son morceau.',
       },
     ],
   },
