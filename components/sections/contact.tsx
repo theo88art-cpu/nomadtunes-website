@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Mail,
   MapPin,
@@ -23,6 +23,37 @@ export function Contact() {
   const tr = t.contact;
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [location, setLocation] = useState<{
+    city: string;
+    country: string;
+    latitude: number;
+    longitude: number;
+  } | null>(null);
+
+  useEffect(() => {
+    async function loadLocation() {
+      const { data } = await supabase
+        .from('site_location')
+        .select('city,country,latitude,longitude')
+        .limit(1)
+        .maybeSingle();
+
+      if (data) {
+        setLocation(data as {
+          city: string;
+          country: string;
+          latitude: number;
+          longitude: number;
+        });
+      }
+    }
+
+    loadLocation();
+  }, []);
+
+  const mapUrl = location
+    ? `https://www.openstreetmap.org/export/embed.html?bbox=${location.longitude - 0.1}%2C${location.latitude - 0.07}%2C${location.longitude + 0.1}%2C${location.latitude + 0.07}&layer=mapnik&marker=${location.latitude}%2C${location.longitude}`
+    : 'https://www.openstreetmap.org/export/embed.html?bbox=24.6%2C59.35%2C24.8%2C59.5&layer=mapnik&marker=59.42%2C24.74';
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -167,7 +198,9 @@ export function Contact() {
                 </span>
                 <div>
                   <div className="text-xs text-white/40">{tr.currentlyIn}</div>
-                  <div className="text-sm font-medium text-white">{tr.currentlyValue}</div>
+                  <div className="text-sm font-medium text-white">
+                    {location ? `${location.city}, ${location.country}` : tr.currentlyValue}
+                  </div>
                 </div>
               </div>
 
@@ -184,7 +217,7 @@ export function Contact() {
               <div className="flex-1 overflow-hidden rounded-2xl border border-white/10">
                 <iframe
                   title={tr.mapTitle}
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=24.6%2C59.35%2C24.8%2C59.5&layer=mapnik&marker=59.42%2C24.74"
+                  src={mapUrl}
                   className="h-full min-h-[180px] w-full grayscale invert-[0.9] contrast-[1.2]"
                   loading="lazy"
                 />

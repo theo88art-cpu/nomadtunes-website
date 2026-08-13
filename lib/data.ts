@@ -11,7 +11,7 @@ export const SITE = {
 };
 
 export const IMAGES = {
-  heroVan: '/images/ChatGPT_Image_11_août_2026,_01_19_54.png',
+  heroVan: '/images/CAMPING CAR SOLEIL COUCHANT.png',
   studioWide:
     'https://images.pexels.com/photos/35307143/pexels-photo-35307143.jpeg?auto=compress&cs=tinysrgb&w=1600',
   studioMixing:

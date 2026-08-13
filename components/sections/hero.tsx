@@ -2,12 +2,29 @@
 
 import { motion } from 'framer-motion';
 import { MapPin, Play } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { IMAGES } from '@/lib/data';
+import { supabase } from '@/lib/supabase';
 
 export function Hero() {
   const { t } = useLanguage();
   const tr = t.hero;
+  const [location, setLocation] = useState<{ city: string; country: string } | null>(null);
+
+  useEffect(() => {
+    async function loadLocation() {
+      const { data } = await supabase
+        .from('site_location')
+        .select('city,country')
+        .limit(1)
+        .maybeSingle();
+
+      if (data) setLocation(data as { city: string; country: string });
+    }
+
+    loadLocation();
+  }, []);
 
   return (
     <section
@@ -38,7 +55,7 @@ export function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ff6a00] opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-[#ff6a00]" />
             </span>
-            {tr.badge}
+            {location ? `${tr.badge.split('·')[0].trim()} · ${location.city}, ${location.country}` : tr.badge}
           </motion.div>
 
           <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[4.2rem]">
@@ -120,7 +137,7 @@ export function Hero() {
                   </span>
                   <div>
                     <div className="text-xs font-semibold text-white">
-                      {tr.badgeLocation}
+                      {location ? `${location.city}, ${location.country}` : tr.badgeLocation}
                     </div>
                     <div className="text-[10px] text-white/40">
                       {tr.badgeNext}
