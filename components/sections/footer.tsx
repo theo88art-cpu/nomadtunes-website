@@ -1,9 +1,10 @@
 'use client';
 
-import { Instagram, Music, Music2, Youtube, Heart } from 'lucide-react';
+import { Instagram, Music2, Youtube, Heart } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { SITE } from '@/lib/data';
 import { LocationFooter } from '@/components/sections/location-footer';
+import { SpotifyIcon } from '@/components/icons/spotify-icon';
 
 const LINK_KEYS = ['services', 'roadtrip', 'artists', 'portfolio', 'contest', 'faq', 'contact'] as const;
 
@@ -25,7 +26,7 @@ export function Footer() {
             </p>
             <div className="mt-5 flex gap-3">
               <Social href={SITE.socials.instagram} icon={Instagram} label="Instagram" />
-              <Social href={SITE.socials.spotify} icon={Music} label="Spotify" />
+              <Social href={SITE.socials.spotify} icon={SpotifyIcon} label="Spotify" />
               <Social href={SITE.socials.youtube} icon={Youtube} label="YouTube" />
               <Social href={SITE.socials.tiktok} icon={Music2} label="TikTok" />
             </div>

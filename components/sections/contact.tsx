@@ -6,7 +6,6 @@ import {
   Mail,
   MapPin,
   Instagram,
-  Music,
   Music2,
   Youtube,
   Send,
@@ -17,6 +16,7 @@ import { useLanguage } from '@/hooks/useLanguage';
 import { SITE } from '@/lib/data';
 import { supabase } from '@/lib/supabase';
 import { Reveal } from '@/components/reveal';
+import { SpotifyIcon } from '@/components/icons/spotify-icon';
 
 export function Contact() {
   const { t } = useLanguage();
@@ -208,7 +208,7 @@ export function Contact() {
                 <div className="mb-3 text-xs text-white/40">{tr.followJourney}</div>
                 <div className="flex gap-3">
                   <SocialLink href={SITE.socials.instagram} icon={Instagram} label="Instagram" />
-                  <SocialLink href={SITE.socials.spotify} icon={Music} label="Spotify" />
+                  <SocialLink href={SITE.socials.spotify} icon={SpotifyIcon} label="Spotify" />
                   <SocialLink href={SITE.socials.youtube} icon={Youtube} label="YouTube" />
                   <SocialLink href={SITE.socials.tiktok} icon={Music2} label="TikTok" />
                 </div>
