@@ -94,8 +94,8 @@ function LeafletMap({
 }) {
   const mapEl = useRef<HTMLDivElement>(null);
   const mapRef = useRef<any>(null);
-  const [selectedArtist, setSelectedArtist] = useState<{
-    artist: Artist;
+  const [selectedCity, setSelectedCity] = useState<{
+    artists: Artist[];
     city: string;
     country: string;
   } | null>(null);
@@ -134,10 +134,10 @@ function LeafletMap({
       L.control.zoom({ position: 'topleft' }).addTo(map);
 
       // Build a lookup of cities that have artist data
-      const artistLookup = new Map<string, Artist>();
+      const artistLookup = new Map<string, Artist[]>();
       ROADTRIP_DATA.forEach((rc) => {
         if (rc.artists.length > 0) {
-          artistLookup.set(rc.city, rc.artists[0]);
+          artistLookup.set(rc.city, rc.artists);
         }
       });
 
@@ -168,10 +168,10 @@ function LeafletMap({
           },
         );
 
-        const artist = artistLookup.get(city.city);
-        if (artist) {
+        const artists = artistLookup.get(city.city);
+        if (artists) {
           marker.on('click', () => {
-            setSelectedArtist({ artist, city: city.city, country: city.country });
+            setSelectedCity({ artists, city: city.city, country: city.country });
           });
         }
       });
@@ -200,12 +200,13 @@ function LeafletMap({
   return (
     <>
       <div ref={mapEl} className="absolute inset-0" style={{ background: '#ddd' }} />
-      {selectedArtist && (
+      {selectedCity && (
         <ArtistPopup
-          artist={selectedArtist.artist}
-          city={selectedArtist.city}
-          country={selectedArtist.country}
-          onClose={() => setSelectedArtist(null)}
+          key={selectedCity.city}
+          artists={selectedCity.artists}
+          city={selectedCity.city}
+          country={selectedCity.country}
+          onClose={() => setSelectedCity(null)}
         />
       )}
     </>
@@ -235,16 +236,28 @@ loading="lazy"></iframe>`;
 // ---------------------------------------------------------------------------
 
 function ArtistPopup({
-  artist,
+  artists,
   city,
   country,
   onClose,
 }: {
-  artist: Artist;
+  artists: Artist[];
   city: string;
   country: string;
   onClose: () => void;
 }) {
+  const [artistIndex, setArtistIndex] = useState(0);
+  const artist = artists[artistIndex];
+  const hasSeveralArtists = artists.length > 1;
+
+  const showPreviousArtist = () => {
+    setArtistIndex((index) => (index - 1 + artists.length) % artists.length);
+  };
+
+  const showNextArtist = () => {
+    setArtistIndex((index) => (index + 1) % artists.length);
+  };
+
   return (
     <div
       className="fixed inset-0 z-[2000] flex items-center justify-center p-4"
@@ -283,6 +296,30 @@ function ArtistPopup({
                 {city}, {country}
               </p>
             </div>
+
+            {hasSeveralArtists && (
+              <div className="flex items-center justify-between rounded-xl border border-white/10 bg-white/[0.04] p-1">
+                <button
+                  type="button"
+                  onClick={showPreviousArtist}
+                  className="rounded-lg px-3 py-1.5 text-sm text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+                  aria-label="Artiste précédent"
+                >
+                  ←
+                </button>
+                <span className="text-xs text-white/55">
+                  {artistIndex + 1} / {artists.length}
+                </span>
+                <button
+                  type="button"
+                  onClick={showNextArtist}
+                  className="rounded-lg px-3 py-1.5 text-sm text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+                  aria-label="Artiste suivant"
+                >
+                  →
+                </button>
+              </div>
+            )}
 
             {/* Spotify embed — official Spotify iframe via dangerouslySetInnerHTML */}
             {artist.spotifyEmbed && (
