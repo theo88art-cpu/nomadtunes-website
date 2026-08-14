@@ -53,6 +53,14 @@ const en = {
     productionLinkText: 'Click here to discover them.',
     productionLinkUrl:
       'https://open.spotify.com/intl-fr/artist/6uNGJkMutXFMKC71HObCgs',
+    remoteMixTitle: 'Remote Mix & Master',
+    remoteMixIntro:
+      'Your track starts from scratch: send me your stems and I will handle the mix and final master.',
+    remoteMixPrice: '€100',
+    remoteMixUnlimited: 'Unlimited number of tracks',
+    remoteMixRevisions: '2 revisions included',
+    remoteMixExtraRevision: 'Then €10 per additional revision',
+    remoteMixPayment: 'Payment and file upload coming soon',
   },
   roadtrip: {
     label: 'Roadtrip Europe',
