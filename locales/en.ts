@@ -60,7 +60,11 @@ const en = {
     remoteMixUnlimited: 'Unlimited number of tracks',
     remoteMixRevisions: '2 revisions included',
     remoteMixExtraRevision: 'Then €10 per additional revision',
-    remoteMixPayment: 'Payment and file upload coming soon',
+    remoteMixPayment: 'Complete mix + master',
+    remoteMixButton: 'Book — €100',
+    remoteMixLoading: 'Opening payment…',
+    remoteMixSecure: 'Secure payment · Promo codes accepted',
+    remoteMixError: 'Payment is temporarily unavailable. Please try again shortly.',
   },
   roadtrip: {
     label: 'Roadtrip Europe',

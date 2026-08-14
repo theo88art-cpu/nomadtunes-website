@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   Mic,
@@ -27,6 +28,27 @@ const DESC_KEYS = ['recordingDesc', 'mixingDesc', 'masteringDesc', 'productionDe
 export function Services() {
   const { t } = useLanguage();
   const tr = t.services;
+  const [isCheckoutLoading, setIsCheckoutLoading] = useState(false);
+  const [checkoutError, setCheckoutError] = useState<string | null>(null);
+
+  async function openCheckout() {
+    setIsCheckoutLoading(true);
+    setCheckoutError(null);
+
+    try {
+      const response = await fetch('/api/checkout', { method: 'POST' });
+      const payload = (await response.json()) as { url?: string; error?: string };
+
+      if (!response.ok || !payload.url) {
+        throw new Error(payload.error || 'Unable to create checkout session');
+      }
+
+      window.location.assign(payload.url);
+    } catch {
+      setCheckoutError(tr.remoteMixError);
+      setIsCheckoutLoading(false);
+    }
+  }
 
   return (
     <section id="services" className="relative py-24 sm:py-32">
@@ -106,9 +128,19 @@ export function Services() {
                   ))}
                 </ul>
               </div>
-              <div className="shrink-0 rounded-2xl border border-[#ff6a00]/30 bg-black/25 px-7 py-5 text-center">
+              <div className="shrink-0 rounded-2xl border border-[#ff6a00]/30 bg-black/25 px-7 py-5 text-center sm:max-w-56">
                 <p className="font-display text-4xl font-bold text-[#ff7b1c]">{tr.remoteMixPrice}</p>
                 <p className="mt-2 max-w-40 text-xs leading-relaxed text-white/50">{tr.remoteMixPayment}</p>
+                <button
+                  type="button"
+                  onClick={openCheckout}
+                  disabled={isCheckoutLoading}
+                  className="mt-5 w-full rounded-xl bg-[#ff6a00] px-4 py-3 text-sm font-bold text-white transition-colors hover:bg-[#ff8127] disabled:cursor-wait disabled:opacity-70"
+                >
+                  {isCheckoutLoading ? tr.remoteMixLoading : tr.remoteMixButton}
+                </button>
+                <p className="mt-3 text-xs leading-relaxed text-white/45">{tr.remoteMixSecure}</p>
+                {checkoutError && <p className="mt-3 text-xs text-red-300">{checkoutError}</p>}
               </div>
             </div>
           </div>

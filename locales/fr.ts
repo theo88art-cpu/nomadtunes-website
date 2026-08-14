@@ -60,7 +60,11 @@ const fr = {
     remoteMixUnlimited: 'Nombre de pistes illimité',
     remoteMixRevisions: '2 retouches incluses',
     remoteMixExtraRevision: 'Puis 10 € par retouche supplémentaire',
-    remoteMixPayment: 'Paiement et envoi des fichiers bientôt disponibles',
+    remoteMixPayment: 'Mix + mastering complet',
+    remoteMixButton: 'Réserver — 100 €',
+    remoteMixLoading: 'Ouverture du paiement…',
+    remoteMixSecure: 'Paiement sécurisé · Codes promo acceptés',
+    remoteMixError: 'Le paiement est momentanément indisponible. Réessaie dans quelques instants.',
   },
   roadtrip: {
     label: 'Roadtrip Europe',
