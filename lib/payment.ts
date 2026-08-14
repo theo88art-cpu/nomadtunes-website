@@ -19,7 +19,8 @@ export async function getPaidCheckoutSession(sessionId: string) {
 
   const session = await getStripeClient().checkout.sessions.retrieve(sessionId);
 
-  if (session.payment_status !== 'paid') {
+  // A 100% promotion code creates a valid free Checkout session.
+  if (session.payment_status !== 'paid' && session.payment_status !== 'no_payment_required') {
     throw new Error('Payment has not been confirmed yet.');
   }
 
