@@ -19,8 +19,8 @@ export default function Home() {
       <Hero />
       <Discover />
       <Roadtrip />
-      <Services />
       <Artists />
+      <Services />
       <Portfolio />
       <Contest />
       <Newsletter />
