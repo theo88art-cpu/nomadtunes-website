@@ -2,6 +2,7 @@ import './globals.css';
 import 'leaflet/dist/leaflet.css';
 import type { Metadata } from 'next';
 import { Inter, Space_Grotesk } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import { LanguageProvider } from '@/context/LanguageContext';
 
 const inter = Inter({
@@ -41,6 +42,7 @@ export default function RootLayout({
         className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}
       >
         <LanguageProvider>{children}</LanguageProvider>
+        <Analytics />
       </body>
     </html>
   );
