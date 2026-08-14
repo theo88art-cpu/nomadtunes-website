@@ -105,7 +105,7 @@ export function PaymentUpload({ sessionId }: PaymentUploadProps) {
 
         {paymentState === 'paid' && status !== 'done' && (
           <form className="mt-7 space-y-5" onSubmit={uploadFiles}>
-            <p className="leading-relaxed text-white/65">Envoie ici un fichier ZIP contenant tes multipistes. Les fichiers sont stockés dans un espace privé, accessible uniquement à Nomadtunes.</p>
+            <p className="leading-relaxed text-white/65">Envoie ici un fichier ZIP contenant tes multipistes. Les fichiers sont stockés dans un espace privé, accessible uniquement à Nomadtunes. Pour un gros dossier, privilégie une connexion Wi‑Fi stable.</p>
             <label className="block rounded-2xl border border-dashed border-white/25 bg-black/20 p-5 transition-colors hover:border-[#ff6a00]/60">
               <span className="flex items-center gap-3 font-semibold"><FileArchive className="size-5 text-[#ff6a00]" /> Fichier ZIP de multipistes</span>
               <input className="mt-4 block w-full text-sm text-white/70 file:mr-4 file:rounded-lg file:border-0 file:bg-[#ff6a00] file:px-4 file:py-2 file:font-bold file:text-white" type="file" accept=".zip,application/zip,application/x-zip-compressed" onChange={selectFile} required />

@@ -14,6 +14,7 @@ type UploadRequest = {
 async function ensurePrivateBucket() {
   const { error } = await supabaseAdmin.storage.createBucket(MIX_MASTER_STORAGE_BUCKET, {
     public: false,
+    fileSizeLimit: 2 * 1024 * 1024 * 1024,
   });
 
   // The bucket already existing is expected after the first order.
