@@ -18,8 +18,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Discover />
-      <Services />
       <Roadtrip />
+      <Services />
       <Artists />
       <Portfolio />
       <Contest />
