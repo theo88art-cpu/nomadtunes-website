@@ -4,39 +4,29 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { Mail, Check, Loader2, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
-import { supabase } from '@/lib/supabase';
 import { Reveal } from '@/components/reveal';
 
 export function Newsletter() {
   const { t } = useLanguage();
   const tr = t.newsletter;
   const [email, setEmail] = useState('');
+  const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
-    const { error } = await supabase
-      .from('newsletter_subscribers')
-      .insert({ email });
-    if (error) {
-      if (error.code === '23505') {
-        setStatus('success');
-      } else {
-        setStatus('error');
-      }
-      return;
-    }
 
     try {
-      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL || '';
-      await fetch(`${supabaseUrl}/functions/v1/newsletter-notify`, {
+      const response = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, consent }),
       });
+      if (!response.ok) throw new Error('Newsletter error');
     } catch {
-      // Email notification is best-effort; the subscription itself succeeded.
+      setStatus('error');
+      return;
     }
     setStatus('success');
   };
@@ -77,33 +67,32 @@ export function Newsletter() {
                       initial={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       onSubmit={handleSubmit}
-                      className="flex flex-col gap-3 sm:flex-row"
+                      className="flex flex-col gap-3"
                     >
-                      <div className="relative flex-1">
-                        <Mail className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-white/30" />
-                        <input
-                          type="email"
-                          required
-                          placeholder={tr.placeholder}
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          className="w-full rounded-full border border-white/10 bg-white/[0.05] py-4 pl-11 pr-4 text-sm text-white placeholder:text-white/30 focus:border-[#ff6a00]/50 focus:outline-none"
-                        />
+                      <div className="flex flex-col gap-3 sm:flex-row">
+                        <div className="relative flex-1">
+                          <Mail className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-white/30" />
+                          <input
+                            type="email"
+                            required
+                            placeholder={tr.placeholder}
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            className="w-full rounded-full border border-white/10 bg-white/[0.05] py-4 pl-11 pr-4 text-sm text-white placeholder:text-white/30 focus:border-[#ff6a00]/50 focus:outline-none"
+                          />
+                        </div>
+                        <button
+                          type="submit"
+                          disabled={status === 'loading' || !consent}
+                          className="flex items-center justify-center gap-2 rounded-full bg-[#ff6a00] px-7 py-4 text-sm font-semibold text-white transition-all hover:scale-105 hover:glow-orange-sm disabled:opacity-50"
+                        >
+                          {status === 'loading' ? <Loader2 className="h-4 w-4 animate-spin" /> : <>{tr.subscribe}<ArrowRight className="h-4 w-4" /></>}
+                        </button>
                       </div>
-                      <button
-                        type="submit"
-                        disabled={status === 'loading'}
-                        className="flex items-center justify-center gap-2 rounded-full bg-[#ff6a00] px-7 py-4 text-sm font-semibold text-white transition-all hover:scale-105 hover:glow-orange-sm disabled:opacity-50"
-                      >
-                        {status === 'loading' ? (
-                          <Loader2 className="h-4 w-4 animate-spin" />
-                        ) : (
-                          <>
-                            {tr.subscribe}
-                            <ArrowRight className="h-4 w-4" />
-                          </>
-                        )}
-                      </button>
+                      <label className="flex cursor-pointer items-start gap-2 px-2 text-left text-xs text-white/50">
+                        <input type="checkbox" required checked={consent} onChange={(e) => setConsent(e.target.checked)} className="mt-0.5 accent-[#ff6a00]" />
+                        <span>J’accepte de recevoir la newsletter Nomadtunes. Je peux me désinscrire à tout moment.</span>
+                      </label>
                     </motion.form>
                   )}
                 </AnimatePresence>
