@@ -29,6 +29,13 @@ const en = {
   discover: {
     label: 'Discover Nomadtunes',
     title: 'Two stories. One van. Endless road.',
+    conceptTitle: 'The Nomadtunes concept',
+    conceptParagraph1:
+      'I travel across Europe with my nomad studio and my productions, meeting artists along the way. This journey allows us to share our experiences, our cultures and our different visions of music.',
+    conceptParagraph2:
+      'Participation is free, but on one condition: every recorded, mixed and mastered track will then be distributed on Spotify through TuneCore, with royalties shared 50/50 using TuneCore Splits. The tracks will also be added to playlists alongside artists who have already joined the adventure.',
+    conceptParagraph3:
+      'Every collaboration helps new talent get discovered, brings cultures together and gives all the artists involved valuable exposure. As the adventure grows, so does the community — and every new release benefits everyone.',
     reel1Title: 'Why I left everything to produce in a van',
     reel1Tag: 'Founder Story',
     reel2Title: 'How to record in a van',

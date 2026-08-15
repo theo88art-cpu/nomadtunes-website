@@ -29,6 +29,13 @@ const fr = {
   discover: {
     label: 'Découvrir Nomadtunes',
     title: 'Deux histoires. Un van. Route infinie.',
+    conceptTitle: 'Le concept Nomadtunes',
+    conceptParagraph1:
+      "Je voyage à travers l’Europe avec mon studio nomade et mes productions, à la rencontre des artistes. Cette démarche nous permet de partager nos expériences, nos cultures et nos différentes visions de la musique.",
+    conceptParagraph2:
+      'La participation est gratuite, mais à une condition : chaque morceau enregistré, mixé et masterisé sera ensuite distribué sur Spotify via TuneCore, avec les royalties partagées à 50/50 grâce à TuneCore Splits. Les morceaux seront également ajoutés à des playlists, aux côtés des artistes qui ont déjà participé à l’aventure.',
+    conceptParagraph3:
+      'Chaque collaboration permet de faire découvrir de nouveaux talents, de mélanger les cultures et d’offrir une belle visibilité à tous les artistes du projet. Plus l’aventure avance, plus la communauté grandit — et chaque nouvelle sortie profite à tout le monde.',
     reel1Title: "Pourquoi j'ai tout quitté pour produire dans un van ?",
     reel1Tag: 'Histoire du Fondateur',
     reel2Title: "Comment enregistrer dans un van ?",

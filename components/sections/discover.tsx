@@ -38,6 +38,28 @@ export function Discover() {
           </h2>
         </Reveal>
 
+        <Reveal className="mb-16">
+          <div className="relative overflow-hidden rounded-[1.75rem] border border-[#ff6a00]/20 bg-white/[0.025] p-6 sm:p-8 md:p-10">
+            <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[#ff6a00]/10 blur-3xl" />
+            <div className="relative grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-12">
+              <div>
+                <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#ff6a00]">
+                  Nomadtunes
+                </span>
+                <h3 className="mt-3 font-display text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                  {tr.conceptTitle}
+                </h3>
+              </div>
+
+              <div className="space-y-5 text-base leading-relaxed text-white/65 sm:text-lg">
+                <p>{tr.conceptParagraph1}</p>
+                <p>{tr.conceptParagraph2}</p>
+                <p>{tr.conceptParagraph3}</p>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
         <div className="grid gap-6 md:grid-cols-2 md:gap-8">
           {REELS.map((reel, i) => (
             <Reveal key={reel.title} delay={i * 0.15}>
