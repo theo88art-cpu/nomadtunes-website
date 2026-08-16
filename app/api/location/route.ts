@@ -54,8 +54,17 @@ export async function POST(request: NextRequest) {
       geocode = null;
     }
 
-    const city = geocode?.address?.city || geocode?.address?.town || geocode?.address?.village || geocode?.address?.county || null;
-    const country = geocode?.address?.country || null;
+    const address = geocode?.address;
+    const city =
+      address?.city ||
+      address?.town ||
+      address?.village ||
+      address?.municipality ||
+      address?.county ||
+      address?.state_district ||
+      address?.state ||
+      'Position actuelle';
+    const country = address?.country || 'Pays inconnu';
 
     const SINGLETON_ID = '00000000-0000-0000-0000-000000000000';
 
@@ -75,8 +84,8 @@ export async function POST(request: NextRequest) {
       longitude,
       updated_at: new Date().toISOString(),
     };
-    if (city) upsertPayload.city = city;
-    if (country) upsertPayload.country = country;
+    upsertPayload.city = city;
+    upsertPayload.country = country;
 
     const { data, error } = await supabaseClient.from('site_location').upsert(upsertPayload, { onConflict: 'id' });
 
