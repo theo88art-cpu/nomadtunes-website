@@ -509,6 +509,17 @@ export const ROADTRIP_DATA: RoadtripCity[] = [
         songs: [],
         description: '',
       },
+      {
+        name: 'Krick',
+        spotify: 'https://open.spotify.com/intl-fr/track/3AsscrzSKCE1vEo7JQP42U?si=74f951dc52624073',
+        spotifyCover: '',
+        spotifyEmbed:
+          'https://open.spotify.com/embed/track/3AsscrzSKCE1vEo7JQP42U?utm_source=generator&theme=0',
+        instagram: '',
+        youtube: '',
+        songs: [],
+        description: '',
+      },
     ],
   },
   {
